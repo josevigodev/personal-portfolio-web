@@ -4,6 +4,7 @@ const FollowMouse = () => {
   const [ enabled, setEnabled] = useState(false);
   const [ position, setPosition ] = useState({x: 0, y: 0})
 
+  // pointer move
   useEffect(() => {
     console.log('effect', { enabled });
 
@@ -23,6 +24,7 @@ const FollowMouse = () => {
     }
   }, [enabled]);
 
+  // change body class name
   useEffect(() => {
     if (enabled) {
       document.body.classList.toggle('no-cursor', enabled);
@@ -45,6 +47,7 @@ const FollowMouse = () => {
         top: '-20px',
         width: '40px',
         height: '40px',
+        transition: 'transform .1s ease',
         transform: `translate(${position.x}px, ${position.y}px)`
       }}
       />

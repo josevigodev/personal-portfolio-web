@@ -10,7 +10,7 @@
   gap: 15px;
   align-items: center;
   color: #fff;
-  font-size: .8rem;
+  font-size: 0.8rem;
   justify-content: space-between;
 }
 
@@ -41,10 +41,10 @@
   font-weight: bold;
   cursor: pointer;
   border-width: 1px;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &.is-following {
@@ -53,13 +53,12 @@
     color: #fff;
     width: 140px;
 
-    
     &:hover {
       background-color: #f003;
       color: red;
       border: 1px solid red;
       opacity: 1;
-      
+
       .tw-followCard-stopFollow {
         display: block;
       }

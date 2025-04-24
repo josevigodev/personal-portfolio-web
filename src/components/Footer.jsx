@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import './Footer.css';
-import { FilterContext } from '../contexts/filter';
+import { CartContext } from '../contexts/cart';
 
 export function Footer() {
-  const { filter } = useContext(FilterContext);
+  const { cart } = useContext(CartContext);
 
-  return <footer className='footer'>{JSON.stringify(filter)}</footer>;
+  return <footer className='footer'>{JSON.stringify(cart)}</footer>;
 }

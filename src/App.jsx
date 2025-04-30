@@ -1,15 +1,11 @@
-import { Header } from './components/Header';
-import { Products } from './components/Products';
-import { Footer } from './components/Footer';
-import { Cart } from './components/Cart';
-import { CartContextProvider } from './components/CartContextProvider';
+import { MainContent } from './components/MainContent';
+import { TopHeader } from './components/TopHeader';
 
 export default function App() {
   return (
-    <CartContextProvider>
-      <Header />
-      <Cart />
-      <Products />
-    </CartContextProvider>
+    <>
+      <TopHeader />
+      <MainContent />
+    </>
   );
 }

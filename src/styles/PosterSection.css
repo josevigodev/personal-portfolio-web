@@ -1,0 +1,91 @@
+.poster {
+  margin-top: 30px;
+}
+
+.poster-link {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 31px;
+  background-color: #0c0e2c;
+}
+
+.poster-img-wrapper {
+  & img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.poster-text-buttom-content {
+  padding: 15px 25px;
+  padding-bottom: 22px;
+
+  & h3,
+  & p {
+    color: #fff;
+  }
+
+  & h3 {
+    margin-bottom: 7px;
+  }
+
+  & p {
+    font-size: 1.2em;
+    line-height: 27px;
+    text-wrap: pretty;
+  }
+
+  & button {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    background-color: #1edbcf;
+    color: #303ab2;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .poster {
+    padding: 0 10px;
+    height: unset;
+  }
+
+  .poster-link {
+    flex-direction: row;
+  }
+
+  .poster-img-wrapper {
+    order: 2;
+    width: 50%;
+    height: auto;
+  }
+
+  .poster-text-buttom-content {
+    width: 50%;
+    height: auto;
+    padding: 40px;
+
+    & h3 {
+      font-size: 3em;
+      margin-bottom: 40px;
+      margin-top: 0;
+    }
+
+    & p {
+      font-size: 1.5em;
+      line-height: 35px;
+    }
+
+    & button {
+      width: fit-content;
+      padding: 18px 35px;
+    }
+  }
+}

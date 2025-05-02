@@ -1,0 +1,92 @@
+.sell-section {
+  background-color: #0c0e2c;
+  border-radius: 30px 30px 0 0;
+}
+
+.sell-main-title {
+  color: #fff;
+  font-size: 1.6em;
+  margin: 8px 0;
+}
+
+.sell-subtitle {
+  color: #eee;
+  font-weight: 100;
+  font-size: 1.2em;
+  line-height: 25px;
+}
+
+.sell-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & article {
+    flex: 1;
+    height: 100%;
+  }
+
+  & article:first-child button {
+    margin-top: 30px;
+  }
+}
+
+.sell-article {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #1f2573;
+}
+
+.sell-img-wrapper {
+  & img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.sell-content {
+  padding: 25px;
+  padding-top: 15px;
+
+  & h4 {
+    color: #eee;
+    margin: 0;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  & p {
+    color: #ddd;
+  }
+
+  & button {
+    color: #fff;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .sell-articles {
+    flex-direction: row;
+  }
+  .sell-main-title {
+    margin-top: 50px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 2em;
+  }
+
+  .sell-subtitle {
+    text-align: center;
+    font-size: 1.4em;
+  }
+
+  .sell-section {
+    padding-bottom: 100px;
+  }
+}

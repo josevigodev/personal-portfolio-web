@@ -1,17 +1,13 @@
-# Enunciado
+to-do:
+Make the whole structure:
+✅ Input for add to-do, button to add it.
+✅ To-do list.
+✅ Each task should have an edit, delete button.
+✅ When is editing the task become an input.
+-The user could change the order of the tasks.(drag & drop)
+✅ Save tasks in local storage.
 
-1. Ecommerce
-
-✅ Muestra una lista de productos que vienen de un JSON.
-✅ Añade un filtro por precio.
-✅ Añade un filtro por categoría.
-
-✅ Haz uso de useContext para evitar pasar props innecesarias.
-
-2. Shopping Cart
-
-✅ Haz que se puedan añadir los productos a un carrito.
-✅ Haz que se puedan eliminar los productos del carrito.
-✅ Haz que se puedan modificar la cantidad de productos de carrito.
-✅ Sincroniza los cambios del carrito con la lista de productos.
-✅ Guarda en un localStorage el carrito para que se recupere al recargar la página.
+Style it well:
+-The input have to be fixed at the top.
+-The title will be part of the header when the user scrolls.
+-Make animation for the task being added, deleted, edited.

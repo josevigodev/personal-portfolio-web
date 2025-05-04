@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 20px 0;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}

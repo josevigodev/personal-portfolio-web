@@ -1,17 +1,36 @@
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { TasksContext } from '../contexts/tasks';
 
 export function Task({ task, checked, id }) {
   const [editing, setEditing] = useState(false);
   const [inputValue, setInputValue] = useState(task);
   const { checkTask, deleteTask, editTask } = useContext(TasksContext);
+  const articleRef = useRef(null);
 
   const handleEdit = () => {
     setEditing(!editing);
   };
 
+  const handleDelete = () => {
+    articleRef.current.classList.add('deleted');
+
+    setTimeout(() => {
+      deleteTask(id);
+    }, 300);
+  };
+
+  const dragStartHandler = (e) => {
+    const { dataTransfer } = e;
+    dataTransfer.setData('text/plain', articleRef.current.id);
+  };
+
   return (
-    <article className='task'>
+    <article
+      id={id}
+      onDragStart={dragStartHandler}
+      ref={articleRef}
+      className='task'
+    >
       <div className='text-wrapper'>
         {editing ? (
           <input
@@ -28,7 +47,9 @@ export function Task({ task, checked, id }) {
               type='checkbox'
               checked={checked}
             />
-            <span className='task-text'>{task}</span>
+            <label form='' className='task-text'>
+              {task}
+            </label>
           </>
         )}
       </div>
@@ -59,7 +80,7 @@ export function Task({ task, checked, id }) {
             Discard
           </button>
         ) : (
-          <button className='delete-button' onClick={() => deleteTask(id)}>
+          <button className='delete-button' onClick={handleDelete}>
             Delete
           </button>
         )}

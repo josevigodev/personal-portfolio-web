@@ -1,9 +1,40 @@
+.background {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  width: 100%;
+  display: flex;
+  padding: 0 10px;
+  animation: background auto linear forwards;
+  animation-timeline: scroll(root block);
+  animation-range: 100px 300px;
+}
+
+h2 {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  animation: show auto forwards;
+  animation-timeline: scroll(root block);
+  animation-range: 100px 300px;
+}
+
+@keyframes background {
+  to {
+    background-color: #0005;
+    backdrop-filter: blur(4px);
+  }
+}
+
 .todo-form {
+  position: sticky;
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 45px;
+  height: 85px;
   max-width: 600px;
+  width: 100%;
+  padding: 20px 0;
   margin: 0 auto;
 }
 
@@ -15,10 +46,13 @@
   border-radius: 8px;
   color: var(--dark);
   font-size: 1.1em;
+  box-shadow: 0 0 10px #0003;
   padding: 0 10px;
+  transition: filter 0.2s ease;
 
   &:focus-visible {
     outline: none;
+    filter: drop-shadow(0 0 5px #fff7) drop-shadow(0 0 10px #fff3);
   }
 }
 
@@ -31,4 +65,10 @@
   background-color: var(--green);
   color: var(--dark);
   cursor: pointer;
+  transition: scale 0.2s ease;
+
+  &:hover {
+    scale: 1.1;
+    box-shadow: 0 0 10px var(--green);
+  }
 }

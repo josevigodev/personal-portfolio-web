@@ -7,15 +7,15 @@ import './styles/TopForm.css';
 export default function App() {
   return (
     <>
-      <header>
-        <h1>TO-DO APP ✔️</h1>
-      </header>
-      <main>
-        <TasksContextProvider>
+      <TasksContextProvider>
+        <header>
+          <h1>TO-DO APP ✔️</h1>
+        </header>
+        <main>
           <TopForm />
           <TaskList />
-        </TasksContextProvider>
-      </main>
+        </main>
+      </TasksContextProvider>
     </>
   );
 }

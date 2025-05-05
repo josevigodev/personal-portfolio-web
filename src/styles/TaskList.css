@@ -1,8 +1,11 @@
 .section-tasks {
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 0 10px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .task {
@@ -15,7 +18,33 @@
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  /* transition: scale 0.2s ease-in-out 0.6s; */
+  animation: show 0.5s cubic-bezier(0.175, 1.885, 0.32, 1.975) 0.2s both;
+}
+
+@keyframes show {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.deleted {
+  animation: delete 0.3s ease both;
+}
+
+@keyframes delete {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 0;
+  }
 }
 
 .text-wrapper {
@@ -84,6 +113,11 @@
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: scale 0.2s ease;
+  user-select: none;
+  &:hover {
+    scale: 1.1;
+  }
 }
 
 .edit-button {

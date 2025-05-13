@@ -1,42 +1,102 @@
 .opening-header {
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .principal-title-container {
-  color: #fafff6;
+  color: var(--primary-a);
   display: flex;
   flex-direction: column;
 
   & small {
-    font-size: 3.5em;
+    font-size: 1.2em;
     line-height: 60px;
+    margin-bottom: -30px;
+    user-select: none;
   }
 
   & h2 {
-    color: #7873f5;
-    font-size: 1.6em;
+    color: var(--primary-a);
+    font-size: 1.7em;
+    user-select: none;
+  }
+}
+
+.contact-info {
+  margin-top: 5px;
+  gap: 10px;
+
+  & p {
+    font-size: 1.2em;
+    color: var(--shadow-purple);
+    font-weight: bold;
+  }
+
+  & button,
+  & a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--shadow-purple);
+    position: relative;
+    color: var(--primary-a);
+
+    &:hover {
+      background-color: #7873f599;
+    }
+    &:active {
+      background-color: #7873f5bb;
+    }
+  }
+}
+
+.social-container {
+  gap: 10px;
+  margin-top: 10px;
+
+  & .social-link {
+    border: 1px solid #ff6ec4;
+    padding: 10px;
+    border-radius: 8px;
+    gap: 5px;
+    text-decoration: none;
+    color: #ff6ec4;
+    cursor: default;
+
+    &:hover {
+      background-color: #ff6ec444;
+    }
+
+    & span {
+      display: flex;
+    }
   }
 }
 
 .animated-gradient-text {
-  background: linear-gradient(270deg, #ff6ec4, var(--primary-a), #4ade80);
-  background-size: 600% 600%;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #6ec4ff);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 4.4em;
   -webkit-text-fill-color: transparent;
+  user-select: none;
   animation: gradientShift 5s ease infinite;
 }
 
 .presentation-img-container {
   max-width: 270px;
+  min-height: 270px;
   border-radius: 50%;
   overflow: hidden;
-  outline: 4px solid var(--primary-a);
+  outline: 4px solid var(--shadow-purple);
   outline-offset: -3px;
-  animation: dropShadowShift 2s ease alternate infinite;
+  box-shadow: 0 0 100px var(--shadow-purple-opacity);
+  animation: dropShadowShift 1s ease alternate infinite;
 
   & img {
     width: 100%;
@@ -60,12 +120,12 @@
 
 @keyframes dropShadowShift {
   from {
-    filter: drop-shadow(0 0 5px var(--primary-a))
-      drop-shadow(0 0 10px var(--primary-a));
+    filter: drop-shadow(0 0 5px var(--shadow-purple))
+      drop-shadow(0 0 10px var(--shadow-purple));
   }
 
   to {
-    filter: drop-shadow(0 0 10px var(--primary-a))
-      drop-shadow(0 0 20px var(--primary-a));
+    filter: drop-shadow(0 0 10px var(--shadow-purple))
+      drop-shadow(0 0 10px var(--shadow-purple));
   }
 }

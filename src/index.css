@@ -2,29 +2,51 @@
   --primary-a: #e8e3f5;
   --shadow-purple: #7873f5;
   --shadow-purple-opacity: #7873f555;
+  --pink: #ff6ec4;
+  --green: #6ec4ff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  position: relative;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--shadow-purple) var(--shadow-purple-opacity);
 }
 
 .blur {
-  min-height: 100vh;
-  backdrop-filter: blur(30px) brightness(20%);
+  backdrop-filter: blur(30px) brightness(35%);
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.atachment {
+  position: absolute;
+  top: -70px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,9 +55,14 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 .width-padding-container {
   max-width: 1000px;
-  padding: 0 20px;
+  padding: 0 40px;
   margin: 0 auto;
 }
 
@@ -55,12 +82,27 @@ body {
 }
 
 .full-height {
-  height: 100dvh;
+  min-height: 100dvh;
 }
 
-@media screen and (min-width: 700px) {
-  .width-padding-container {
-    padding: 0 40px;
+.language-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--shadow-purple);
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 0;
+  z-index: 80;
+
+  &:hover {
+    background-color: #7873f588;
+  }
+  &:active {
+    background-color: #7873f5aa;
   }
 }
 

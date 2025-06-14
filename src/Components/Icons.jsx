@@ -7,10 +7,10 @@ export function CopyIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-copy'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-copy'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z' />
@@ -28,10 +28,10 @@ export function SendIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4' />
@@ -48,10 +48,10 @@ export function GitIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-git'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-git'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' />
@@ -65,6 +65,26 @@ export function GitIcon() {
   );
 }
 
+export function TailwindIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-tailwind'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z' />
+    </svg>
+  );
+}
+
 export function GithubIcon() {
   return (
     <svg
@@ -74,10 +94,10 @@ export function GithubIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-github'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-github'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5' />
@@ -94,10 +114,10 @@ export function LinkedinIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M8 11v5' />
@@ -118,10 +138,10 @@ export function HTMLIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-html5'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-html5'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z' />
@@ -139,10 +159,10 @@ export function CSSIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-css3'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-css3'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z' />
@@ -160,10 +180,10 @@ export function JavascriptIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-javascript'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-javascript'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z' />
@@ -182,10 +202,10 @@ export function ReactIcon() {
       viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
-      stroke-width='2'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      class='icon icon-tabler icons-tabler-outline icon-tabler-brand-react'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-brand-react'
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102' />
@@ -195,6 +215,138 @@ export function ReactIcon() {
       <path d='M12 5.424c-1.925 -1.892 -3.82 -2.766 -5 -2.084c-1.913 1.104 -1.226 5.877 1.536 10.66c.386 .67 .793 1.304 1.212 1.896' />
       <path d='M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913 -1.104 1.226 -5.877 -1.536 -10.66c-.375 -.65 -.78 -1.283 -1.212 -1.897' />
       <path d='M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732z' />
+    </svg>
+  );
+}
+
+export function LinkIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-link'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M9 15l6 -6' />
+      <path d='M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464' />
+      <path d='M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463' />
+    </svg>
+  );
+}
+
+export function HomeIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-home'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M5 12l-2 0l9 -9l9 9l-2 0' />
+      <path d='M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7' />
+      <path d='M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6' />
+    </svg>
+  );
+}
+
+export function SkillsIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-thumb-up'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M7 11v8a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1h3a4 4 0 0 0 4 -4v-1a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1 -2 2h-7a3 3 0 0 1 -3 -3' />
+    </svg>
+  );
+}
+
+export function ProjectsIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-code'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M7 8l-4 4l4 4' />
+      <path d='M17 8l4 4l-4 4' />
+      <path d='M14 4l-4 16' />
+    </svg>
+  );
+}
+
+export function ContactIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-mail-bolt'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M13 19h-8a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5.5' />
+      <path d='M3 7l9 6l9 -6' />
+      <path d='M19 16l-2 3h4l-2 3' />
+    </svg>
+  );
+}
+
+export function AboutIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      fill='none'
+      stroke='currentColor'
+      strokeWidth='2'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      className='icon icon-tabler icons-tabler-outline icon-tabler-book'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+      <path d='M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0' />
+      <path d='M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0' />
+      <path d='M3 6l0 13' />
+      <path d='M12 6l0 13' />
+      <path d='M21 6l0 13' />
     </svg>
   );
 }

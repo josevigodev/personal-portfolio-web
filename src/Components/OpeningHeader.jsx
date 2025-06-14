@@ -18,7 +18,7 @@ export function OpeningHeader({ lang }) {
           className='cv'
           target='_blank'
           rel='noopener noreferrer nofollow'
-          href='/Jose Vigo CV - Frontend Web Developer.pdf'
+          href='/personal-portfolio-web/Jose Vigo CV - Frontend Web Developer.pdf'
         >
           {lang ? 'See CV' : 'Ver curriculum'}
         </a>

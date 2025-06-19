@@ -25,7 +25,7 @@ export function OpeningHeader({ lang }) {
         <div className='flex-row-container social-container'>
           <a
             className='flex-row-container social-link'
-            href='https://www.linkedin.com/in/jose-vigo-a9a728365'
+            href='https://www.linkedin.com/in/josevigodev/'
             target='_blank'
             rel='noopener noreferrer nofollow'
           >

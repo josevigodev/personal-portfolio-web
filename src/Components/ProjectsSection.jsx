@@ -40,6 +40,7 @@ const projects = [
     ],
     demoLink: 'https://josevigodev.github.io/job-hunting-organizer/',
     githubLink: 'https://github.com/josevigodev/job-hunting-organizer',
+    type: true,
   },
   {
     id: 2,

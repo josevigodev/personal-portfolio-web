@@ -100,9 +100,14 @@
       right: 50%;
       animation-delay: 1.2s;
     }
-    &:last-child {
+    &:nth-child(7) {
       bottom: 50px;
       left: 0;
+      animation-delay: 1.4s;
+    }
+    &:last-child {
+      top: -35px;
+      right: 70px;
       animation-delay: 1.4s;
     }
   }

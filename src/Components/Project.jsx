@@ -7,6 +7,7 @@ import {
   LinkIcon,
   ReactIcon,
   TailwindIcon,
+  TypescriptIcon,
 } from './Icons';
 
 export function Project({
@@ -18,6 +19,7 @@ export function Project({
   githubLink,
   tail,
   lang,
+  type,
 }) {
   return (
     <article className='project-wrapper'>
@@ -29,9 +31,7 @@ export function Project({
             <HTMLIcon />
           </li>
           <li>{tail ? <TailwindIcon /> : <CSSIcon />}</li>
-          <li>
-            <JavascriptIcon />
-          </li>
+          <li>{type ? <TypescriptIcon /> : <JavascriptIcon />}</li>
           <li>
             <ReactIcon />
           </li>

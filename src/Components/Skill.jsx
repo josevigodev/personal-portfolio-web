@@ -6,6 +6,7 @@ import {
   JavascriptIcon,
   ReactIcon,
   TailwindIcon,
+  TypescriptIcon,
 } from './Icons';
 
 export function Skill({ skill }) {
@@ -26,6 +27,8 @@ export function Skill({ skill }) {
           <GitIcon />
         ) : skill === 'Github' ? (
           <GithubIcon />
+        ) : skill === 'Typescript' ? (
+          <TypescriptIcon />
         ) : null}
       </span>
     </li>

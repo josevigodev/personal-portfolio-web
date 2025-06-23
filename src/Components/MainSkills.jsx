@@ -50,6 +50,10 @@ const skills = [
     id: 6,
     skill: 'Github',
   },
+  {
+    id: 7,
+    skill: 'Typescript',
+  },
 ];
 
 const content = [

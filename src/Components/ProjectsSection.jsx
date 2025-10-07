@@ -18,6 +18,19 @@ export function ProjectsSection({ lang }) {
 const projects = [
   {
     id: 0,
+    img: '/personal-portfolio-web/images/buy-buy-project.png',
+    alt: 'buy-buy project picture',
+    title: 'Buy-Buy E-commerce',
+    description: [
+      'Buy-Buy is a modern e-commerce web application built with Next.js, React, Tailwind CSS, and TypeScript. It provides a smooth shopping experience with features such as product browsing, cart management, wishlist, and authentication.',
+      'Buy-Buy es una moderna aplicación web de comercio electrónico creada con Next.js, React, Tailwind CSS y TypeScript. Proporciona una experiencia de compra fluida con funciones como navegación de productos, gestión de carritos, lista de deseos y autenticación.',
+    ],
+    demoLink: 'https://buy-buy-e-commerce-project.vercel.app/',
+    githubLink: 'https://github.com/josevigodev/buy-buy-e-commerce-project',
+    tail: true,
+  },
+  {
+    id: 0,
     img: '/personal-portfolio-web/images/modmania-project.png',
     alt: 'modmania project picture',
     title: 'ModMania Landing Page',

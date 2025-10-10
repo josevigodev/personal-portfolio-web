@@ -1,114 +1,101 @@
-:root {
-  --primary-a: #e8e3f5;
-  --shadow-purple: #7873f5;
-  --shadow-purple-opacity: #7873f555;
-  --pink: #ff6ec4;
-  --green: #6ec4ff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+@import 'tailwindcss';
 
-  color-scheme: dark light;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  position: relative;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
-  scrollbar-width: thin;
-  scrollbar-color: var(--shadow-purple) var(--shadow-purple-opacity);
+@font-face {
+  font-family: 'Funnel Display';
+  src: url(/public/fonts/Funnel_Display/FunnelDisplay-VariableFont_wght.ttf)
+    format('truetype');
 }
 
-.blur {
-  backdrop-filter: blur(30px) brightness(35%);
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-main-dark: #171717;
+  --color-main-light: #f7f7f7;
+  --color-text-main-dark: #eee;
+  --color-text-main-light: #111;
+  --color-text-secundary-dark: #ccc;
+  --color-text-secundary-light: #555;
+  --color-border-dark: #333;
+  --color-border-light: #ddd;
+  --color-main-opacity-dark: #171717aa;
+  --color-main-opacity-light: #f7f7f7aa;
+  --color-hover-bg-dark: #252525;
+  --color-hover-bg-light: #d9d9d9;
+
+  --shadow-dark: 0 2px 2px #fff1;
+  --shadow-light: 0 2px 2px #0001;
+
+  --default-font-family: 'Funnel Display';
+
+  --container-maxw: 850px;
+
+  --spacing-main-container: 20px;
 }
 
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100dvh;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
+.project {
+  animation: slice-up 0.3s ease-out both;
 }
 
-.atachment {
-  position: absolute;
-  top: -70px;
+.copy {
+  animation: slice-down 3s ease-out both;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100dvh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-.width-padding-container {
-  max-width: 1000px;
-  padding: 0 40px;
-  margin: 0 auto;
-}
-
-.flex-column-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-row-container {
-  display: flex;
-  align-items: center;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.full-height {
-  min-height: 100dvh;
-}
-
-.language-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 8px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--shadow-purple);
-  font-weight: bold;
-  font-size: 1.1em;
-  margin: 0;
-  z-index: 80;
+.animated-background {
+  background-size: 200% 200%;
+  animation: bg-move 1s linear infinite alternate;
 
   &:hover {
-    background-color: #7873f588;
-  }
-  &:active {
-    background-color: #7873f5aa;
+    animation-play-state: paused;
   }
 }
 
-@media screen and (min-width: 810px) {
-  .flex-container {
-    flex-direction: row;
-    justify-content: space-between;
+@keyframes bg-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 90% 50%;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slice-up {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slice-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
   }
 }

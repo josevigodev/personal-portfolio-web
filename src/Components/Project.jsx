@@ -57,7 +57,7 @@ export function Project({
           {technologies.slice(0, 3).map((tech) => (
             <li
               key={tech}
-              className='flex select-none items-center gap-2 rounded-md shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-2 py-1'
+              className='flex select-none items-center gap-2 rounded-md bg-white/10 dark:bg-black/10 shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-2 py-1'
             >
               <img
                 className='size-4'
@@ -72,7 +72,7 @@ export function Project({
         </ul>
         <button
           onClick={() => setOpen(true)}
-          className='animated-background bg-linear-270 from-[#eee] via-[#ccc] to-[#eee] dark:from-[#222] dark:via-[#333] dark:to-[#222] absolute bottom-2 right-4 flex items-center gap-2 text-text-main-light p-1 px-2 rounded-md dark:text-text-main-dark underline underline-offset-2 cursor-pointer font-normal hover:invert-100 transition-all duration-150'
+          className='animated-background bg-linear-270 from-[#fff] via-[#ddd] to-[#fff] dark:from-[#000] dark:via-[#333] dark:to-[#111] absolute bottom-2 right-4 flex items-center gap-2 text-text-main-light p-1 px-2 rounded-md dark:text-text-main-dark underline underline-offset-2 cursor-pointer font-normal hover:invert-100 transition-all duration-150'
         >
           See more
         </button>

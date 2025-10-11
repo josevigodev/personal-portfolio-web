@@ -25,7 +25,7 @@ const projects = [
   {
     id: 0,
     icon: '/personal-portfolio-web/images/cart.png',
-    img: '/personal-portfolio-web/images/buy-buy-project.png',
+    img: '/personal-portfolio-web/images/buy-buy-project.webp',
     alt: 'buy-buy project picture',
     title: 'Buy-Buy e-commerce Web App',
     shortTitle: 'buy-buy',
@@ -53,7 +53,7 @@ const projects = [
   {
     id: 0,
     icon: '/personal-portfolio-web/images/game-controller.png',
-    img: '/personal-portfolio-web/images/modmania-project.png',
+    img: '/personal-portfolio-web/images/modmania-project.webp',
     alt: 'modmania project picture',
     title: 'ModMania Landing Page',
     shortTitle: 'modmania',
@@ -79,7 +79,7 @@ const projects = [
   {
     id: 1,
     icon: '/personal-portfolio-web/images/case.png',
-    img: '/personal-portfolio-web/images/job-project.png',
+    img: '/personal-portfolio-web/images/job-project.webp',
     alt: 'job hunting project picture',
     title: 'Job Hunting Organizer',
     shortTitle: 'job',
@@ -106,7 +106,7 @@ const projects = [
   {
     id: 2,
     icon: '/personal-portfolio-web/images/dollar.png',
-    img: '/personal-portfolio-web/images/expense-project.png',
+    img: '/personal-portfolio-web/images/expense-project.webp',
     alt: 'expenses tracker project picture',
     title: 'Smart Expenses Tracker',
     shortTitle: 'expenses',

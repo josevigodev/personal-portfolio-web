@@ -51,7 +51,7 @@ const projects = [
     ],
   },
   {
-    id: 0,
+    id: 1,
     icon: '/personal-portfolio-web/images/game-controller.png',
     img: '/personal-portfolio-web/images/modmania-project.webp',
     alt: 'modmania project picture',
@@ -77,7 +77,7 @@ const projects = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     icon: '/personal-portfolio-web/images/case.png',
     img: '/personal-portfolio-web/images/job-project.webp',
     alt: 'job hunting project picture',
@@ -104,7 +104,7 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     icon: '/personal-portfolio-web/images/dollar.png',
     img: '/personal-portfolio-web/images/expense-project.webp',
     alt: 'expenses tracker project picture',

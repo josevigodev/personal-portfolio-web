@@ -19,7 +19,7 @@ export function Project({
 
   return (
     <>
-      <article className='relative pb-12 rounded-md shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-4'>
+      <article className='animated-project-background relative pb-12 bg-linear-200 from-[#fff] via-[#ccc] to-[#fff] dark:from-[#111] dark:via-[#333] dark:to-[#111] rounded-md shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-4 hover:scale-105 transition-transform duration-150 ease-in'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2'>
             <img
@@ -37,7 +37,12 @@ export function Project({
               <LinkIcon className='size-4 text-text-main-light dark:text-text-main-dark stroke-1 group-hover:stroke-2 group-hover:translate-x-0.5 transition-all duration-150' />
             </a>
           </div>
-          <a target='_blank' href={githubLink} title='Code in GitHub'>
+          <a
+            target='_blank'
+            href={githubLink}
+            title='Code in GitHub'
+            className='hover:scale-110 drop-shadow-md drop-shadow-transparent hover:drop-shadow-black/50 dark:hover:drop-shadow-white/50 transition-all duration-150'
+          >
             <img
               className='size-6 invert-100 dark:invert-0'
               src='/personal-portfolio-web/svg/GitHub.svg'
@@ -67,7 +72,7 @@ export function Project({
         </ul>
         <button
           onClick={() => setOpen(true)}
-          className='animated-background bg-linear-270 from-[#eee] via-[#ccc] to-[#eee] dark:from-[#222] dark:via-[#333] dark:to-[#222] absolute bottom-2 right-4 flex items-center gap-2 text-text-main-light p-1 px-2 rounded-md dark:text-text-main-dark underline underline-offset-2 cursor-pointer'
+          className='animated-background bg-linear-270 from-[#eee] via-[#ccc] to-[#eee] dark:from-[#222] dark:via-[#333] dark:to-[#222] absolute bottom-2 right-4 flex items-center gap-2 text-text-main-light p-1 px-2 rounded-md dark:text-text-main-dark underline underline-offset-2 cursor-pointer font-normal hover:invert-100 transition-all duration-150'
         >
           See more
         </button>

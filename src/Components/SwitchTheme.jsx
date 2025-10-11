@@ -1,8 +1,21 @@
-import { useTheme } from '../hooks/useTheme';
+import { useEffect, useState } from 'react';
 import { BrightIcon, DarkIcon } from './Icons';
 
 export function SwitchTheme({ lang }) {
-  const { theme, setTheme } = useTheme();
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  const element = document.documentElement;
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      element.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      return;
+    } else if (theme === 'light') {
+      element.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme, element]);
 
   return (
     <button

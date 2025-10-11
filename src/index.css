@@ -4,6 +4,7 @@
   font-family: 'Funnel Display';
   src: url(/public/fonts/Funnel_Display/FunnelDisplay-VariableFont_wght.ttf)
     format('truetype');
+  font-display: swap;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -43,9 +44,15 @@
 .animated-background {
   background-size: 200% 200%;
   animation: bg-move 1s linear infinite alternate;
+}
+
+.animated-project-background {
+  background-size: 200% 200%;
+  animation: bg-move 2s linear infinite alternate;
+  animation-play-state: paused;
 
   &:hover {
-    animation-play-state: paused;
+    animation-play-state: running;
   }
 }
 

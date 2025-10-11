@@ -9,7 +9,7 @@ export function Navbar({ setLang, lang }) {
         <a href='/' className='text-text-main-light dark:text-text-main-dark'>
           josevigo.dev
         </a>
-        <nav>
+        <nav className='flex items-center gap-2'>
           <ul className='flex items-center gap-2'>
             <li>
               <a
@@ -49,6 +49,8 @@ export function Navbar({ setLang, lang }) {
                 <CVIcon className='invert-100 dark:invert-0' />
               </a>
             </li>
+          </ul>
+          <div className='flex items-center gap-2'>
             <CopyEmail lang={lang} />
             <button
               title={lang ? 'Change language' : 'Cambiar idioma'}
@@ -58,7 +60,7 @@ export function Navbar({ setLang, lang }) {
               <Language className='invert-100 dark:invert-0' />
             </button>
             <SwitchTheme lang={lang} />
-          </ul>
+          </div>
         </nav>
       </div>
     </header>

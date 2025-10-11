@@ -16,7 +16,8 @@ export function SeeMoreProject({
   const articleRef = useRef(null);
   const divRef = useRef(null);
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+    if (!e.target.classList.contains('fun')) return;
     setTimeout(() => setOpen(false), 1000);
     const articleClass = 'translate-y-full';
     const divClass = 'opacity-0';
@@ -25,13 +26,14 @@ export function SeeMoreProject({
   };
   return (
     <div
+      onClick={(e) => handleClose(e)}
       ref={divRef}
-      className={`flex flex-col w-full min-h-dvh fixed top-0 left-0 right-0 z-20 backdrop-blur-md transition-all duration-400`}
+      className={`fun flex flex-col w-full min-h-dvh fixed top-0 left-0 right-0 z-20 backdrop-blur-md transition-all duration-400`}
     >
-      <div onClick={handleClose} className='flex-1'></div>
+      <div className='fun flex-1'></div>
       <article
         ref={articleRef}
-        className={`project max-w-maxw mx-auto bg-gray-200/50 dark:bg-black/50 px-main-container py-4 rounded-2xl transition-transform duration-400`}
+        className={`project max-w-maxw mx-auto bg-gray-50/50 dark:bg-black/50 px-main-container py-4 rounded-2xl transition-transform duration-400`}
       >
         <div className='flex items-center justify-between'>
           <img
@@ -40,7 +42,7 @@ export function SeeMoreProject({
             alt='Project logo'
           />
           <button onClick={handleClose}>
-            <CloseIcon className='cursor-pointer invert-100 dark:invert-0' />
+            <CloseIcon className='fun cursor-pointer invert-100 dark:invert-0 hover:-rotate-90 transition-transform duration-150' />
           </button>
         </div>
         <h2 className='mt-4 text-text-main-light dark:text-text-main-dark font-semibold text-2xl w-fit'>

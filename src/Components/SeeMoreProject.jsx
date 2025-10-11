@@ -51,6 +51,7 @@ export function SeeMoreProject({
         </p>
         <div className='mt-4 flex items-center gap-4'>
           <a
+            target='_blank'
             href={demoLink}
             className='bg-main-dark dark:bg-main-light p-1 px-2 text-text-main-dark dark:text-text-main-light flex items-center gap-1 w-fit rounded-md hover:scale-105 transition-transform duration-150'
           >
@@ -58,6 +59,7 @@ export function SeeMoreProject({
             <LinkIcon className='size-4 text-text-main-dark dark:text-text-main-light' />
           </a>
           <a
+            target='_blank'
             href={githubLink}
             className='bg-main-dark dark:bg-main-light p-1 px-2 text-text-main-dark dark:text-text-main-light flex items-center gap-1 w-fit rounded-md hover:scale-105 transition-transform duration-150'
           >

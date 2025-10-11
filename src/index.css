@@ -25,7 +25,7 @@
   --shadow-dark: 0 2px 2px #fff1;
   --shadow-light: 0 2px 2px #0001;
 
-  --default-font-family: 'Funnel Display';
+  --default-font-family: 'Funnel Display', sans-serif;
 
   --container-maxw: 850px;
 

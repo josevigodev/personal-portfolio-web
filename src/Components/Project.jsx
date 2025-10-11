@@ -28,6 +28,8 @@ export function Project({
               alt='Project logo'
             />
             <a
+              target='_blank'
+              title='Visit Website'
               href={demoLink}
               className='text-text-main-light dark:text-text-main-dark flex items-center gap-1 group border-b-3 border-dotted border-b-transparent hover:border-b-text-main-light dark:hover:border-b-text-main-dark transition-colors duration-150'
             >
@@ -35,7 +37,7 @@ export function Project({
               <LinkIcon className='size-4 text-text-main-light dark:text-text-main-dark stroke-1 group-hover:stroke-2 group-hover:translate-x-0.5 transition-all duration-150' />
             </a>
           </div>
-          <a href={githubLink} title='Code in GitHub'>
+          <a target='_blank' href={githubLink} title='Code in GitHub'>
             <img
               className='size-6 invert-100 dark:invert-0'
               src='/personal-portfolio-web/svg/GitHub.svg'

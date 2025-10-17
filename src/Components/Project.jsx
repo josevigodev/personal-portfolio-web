@@ -74,7 +74,7 @@ export function Project({
           onClick={() => setOpen(true)}
           className='animated-background bg-linear-270 from-[#fff] via-[#ddd] to-[#fff] dark:from-[#000] dark:via-[#333] dark:to-[#111] absolute bottom-2 right-4 flex items-center gap-2 text-text-main-light p-1 px-2 rounded-md dark:text-text-main-dark underline underline-offset-2 cursor-pointer font-normal hover:invert-100 transition-all duration-150'
         >
-          See more
+          {lang ? 'See more' : 'Ver más'}
         </button>
       </article>
       {open && (

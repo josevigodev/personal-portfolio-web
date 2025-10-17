@@ -57,7 +57,7 @@ export function SeeMoreProject({
             href={demoLink}
             className='bg-main-dark dark:bg-main-light p-1 px-2 text-text-main-dark dark:text-text-main-light flex items-center gap-1 w-fit rounded-md hover:scale-105 transition-transform duration-150'
           >
-            Visit Website
+            {lang ? 'Visit Website' : 'Visitar sitio'}
             <LinkIcon className='size-4 text-text-main-dark dark:text-text-main-light' />
           </a>
           <a
@@ -65,7 +65,7 @@ export function SeeMoreProject({
             href={githubLink}
             className='bg-main-dark dark:bg-main-light p-1 px-2 text-text-main-dark dark:text-text-main-light flex items-center gap-1 w-fit rounded-md hover:scale-105 transition-transform duration-150'
           >
-            GitHub Code
+            {lang ? 'GitHub Code' : 'Código en GitHub'}
             <img
               className='size-6 dark:invert-100 invert-0'
               src='/personal-portfolio-web/svg/GitHub.svg'

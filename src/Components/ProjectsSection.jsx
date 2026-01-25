@@ -5,7 +5,7 @@ export function ProjectsSection({ lang }) {
   return (
     <section className='mt-15 px-main-container'>
       <div className=' max-w-maxw mx-auto'>
-        <h2 className='flex items-center gap-1 text-lg text-text-main-light dark:text-text-main-dark mb-5'>
+        <h2 className='flex items-center gap-1 text-2xl font-bold text-text-main-light dark:text-text-main-dark mb-10 border-b border-gray-200 dark:border-white/50 pb-4'>
           <DotIcon className='size-3 flex items-center justify-center text-text-secundary-light dark:text-text-secundary-dark' />
           {lang ? 'Projects' : 'Proyectos'}
         </h2>

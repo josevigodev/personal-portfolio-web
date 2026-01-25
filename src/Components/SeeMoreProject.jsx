@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { motion } from 'motion/react';
 import { CloseIcon, LinkIcon } from './Icons';
 
 export function SeeMoreProject({
@@ -10,30 +10,30 @@ export function SeeMoreProject({
   img,
   lang,
   alt,
-  setOpen,
+  onClose,
   icon,
 }) {
-  const articleRef = useRef(null);
-  const divRef = useRef(null);
 
   const handleClose = (e) => {
     if (!e.target.classList.contains('fun')) return;
-    setTimeout(() => setOpen(false), 1000);
-    const articleClass = 'translate-y-full';
-    const divClass = 'opacity-0';
-    articleRef.current.classList.add(articleClass);
-    divRef.current.classList.add(divClass);
+    onClose()
   };
+
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       onClick={(e) => handleClose(e)}
-      ref={divRef}
-      className={`fun flex flex-col w-full min-h-dvh fixed top-0 left-0 right-0 z-20 backdrop-blur-md transition-all duration-400`}
+      className={`fun flex flex-col w-full min-h-dvh fixed top-0 left-0 right-0 z-20 backdrop-blur-md`}
     >
       <div className='fun flex-1'></div>
-      <article
-        ref={articleRef}
-        className={`project max-w-maxw mx-auto bg-gray-50/50 dark:bg-black/50 px-main-container py-4 rounded-2xl transition-transform duration-400`}
+      <motion.article
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className={`max-w-maxw mx-auto bg-white/80 dark:bg-black/50 px-main-container py-4 rounded-2xl`}
       >
         <div className='flex items-center justify-between'>
           <img
@@ -42,7 +42,7 @@ export function SeeMoreProject({
             alt='Project logo'
           />
           <button onClick={handleClose}>
-            <CloseIcon className='fun cursor-pointer invert-100 dark:invert-0 hover:-rotate-90 transition-transform duration-150' />
+            <CloseIcon className='fun cursor-pointer invert-100 dark:invert-0 hover:-rotate-90 transition-transform duration-300' />
           </button>
         </div>
         <h2 className='mt-4 text-text-main-light dark:text-text-main-dark font-semibold text-2xl w-fit'>
@@ -99,7 +99,7 @@ export function SeeMoreProject({
             ))}
           </ul>
         </footer>
-      </article>
-    </div>
+      </motion.article>
+    </motion.div>
   );
 }

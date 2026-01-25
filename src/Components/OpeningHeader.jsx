@@ -3,8 +3,8 @@ import { DotIcon } from './Icons';
 export function OpeningHeader({ lang }) {
   return (
     <section className='mt-5 px-main-container'>
-      <div className='flex flex-col sm:flex-row gap-2 items-center justify-between max-w-maxw mx-auto '>
-        <h2 className='flex items-center gap-1 text-lg text-text-main-light dark:text-text-main-dark'>
+      <div className='flex flex-col sm:flex-row gap-2 items-center justify-between max-w-maxw mx-auto'>
+        <h2 className='flex items-center gap-1 text-xl text-text-main-light dark:text-text-main-dark'>
           <DotIcon className='size-3 flex items-center justify-center text-text-secundary-light dark:text-text-secundary-dark' />
           {lang ? 'Frontend Web Developer' : 'Desarrollador Frontend Web'}
         </h2>

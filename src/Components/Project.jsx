@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LinkIcon } from './Icons';
 import { SeeMoreProject } from './SeeMoreProject';
+import { AnimatePresence } from 'motion/react';
 
 export function Project({
   icon,
@@ -77,20 +78,23 @@ export function Project({
           {lang ? 'See more' : 'Ver más'}
         </button>
       </article>
-      {open && (
-        <SeeMoreProject
-          title={title}
-          description={description}
-          technologies={technologies}
-          demoLink={demoLink}
-          githubLink={githubLink}
-          img={img}
-          lang={lang}
-          icon={icon}
-          alt={alt}
-          setOpen={setOpen}
-        />
-      )}
+
+      <AnimatePresence>
+        {open && (
+          <SeeMoreProject
+            title={title}
+            description={description}
+            technologies={technologies}
+            demoLink={demoLink}
+            githubLink={githubLink}
+            img={img}
+            lang={lang}
+            icon={icon}
+            alt={alt}
+            onClose={() => setOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }

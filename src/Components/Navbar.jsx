@@ -15,7 +15,7 @@ export function Navbar({ setLang, lang }) {
               <a
                 className='block w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150'
                 href='https://linkedin.com/in/josevigodev'
-                title={lang ? 'LinkedIn account' : 'Cuenta de LinkedIn'}
+                title={lang ? 'LinkedIn profile' : 'Perfil de LinkedIn'}
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -41,7 +41,7 @@ export function Navbar({ setLang, lang }) {
               <a
                 className='block w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150'
                 download
-                href='/personal-portfolio-web/Jose Vigo CV English.docx'
+                href='/personal-portfolio-web/Jose Vigo CV English.pdf'
                 title={lang ? 'Download CV' : 'Descargar CV'}
                 target='_blank'
                 rel='noopener noreferrer'

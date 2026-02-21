@@ -14,7 +14,7 @@ const myExperienceDataEnglish = [
     company: 'PitchMatter',
     location: 'Dubai, United Arab Emirates',
     startDate: 'Nov 2025',
-    endDate: 'Present',
+    endDate: 'Feb 2026',
     description: [
       'Fixed UI bugs and aligned the frontend with Figma designs using React, Tailwind CSS, and TypeScript, improving visual consistency, responsiveness, and overall user experience.',
       'Built reusable and scalable React components, leveraging Redux Toolkit for state management to reduce duplication and accelerate future feature development.',

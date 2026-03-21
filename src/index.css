@@ -1,108 +1,120 @@
 @import 'tailwindcss';
 
-@font-face {
-  font-family: 'Funnel Display';
-  src: url(/public/fonts/Funnel_Display/FunnelDisplay-VariableFont_wght.ttf)
-    format('truetype');
-  font-display: swap;
+@theme {
+  --color-primary-container: #00fc40;
+  --color-surface-bright: #2c2c2d;
+  --color-background: #0e0e0f;
+  --color-inverse-surface: #fcf8f9;
+  --color-tertiary-dim: #00dbec;
+  --color-surface: #0e0e0f;
+  --color-surface-variant: #262627;
+  --color-surface-tint: #9cff93;
+  --color-on-secondary: #005f30;
+  --color-on-error-container: #ffd2c8;
+  --color-secondary: #89faaa;
+  --color-surface-dim: #0e0e0f;
+  --color-on-primary-fixed-variant: #006513;
+  --color-on-surface: #ffffff;
+  --color-error: #ff7351;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-high: #201f21;
+  --color-primary-fixed-dim: #00ec3b;
+  --color-on-tertiary: #005b63;
+  --color-secondary-container: #006d38;
+  --color-on-surface-variant: #adaaab;
+  --color-on-secondary-fixed: #004a24;
+  --color-surface-container-low: #131314;
+  --color-primary-dim: #00ec3b;
+  --color-tertiary-fixed: #0eeafd;
+  --color-error-dim: #d53d18;
+  --color-outline-variant: #484849;
+  --color-inverse-primary: #006f16;
+  --color-surface-container-highest: #262627;
+  --color-secondary-dim: #7aeb9d;
+  --color-on-background: #ffffff;
+  --color-inverse-on-surface: #565556;
+  --color-on-primary-fixed: #00440a;
+  --color-outline: #767576;
+  --color-tertiary-container: #0eeafd;
+  --color-on-secondary-container: #e3ffe5;
+  --color-primary-fixed: #00fc40;
+  --color-secondary-fixed-dim: #7aeb9d;
+  --color-on-secondary-fixed-variant: #006a36;
+  --color-secondary-fixed: #89faaa;
+  --color-on-primary-container: #005a10;
+  --color-primary: #9cff93;
+  --color-on-tertiary-container: #005159;
+  --color-on-error: #450900;
+  --color-tertiary-fixed-dim: #00dbec;
+  --color-on-tertiary-fixed-variant: #005c64;
+  --color-surface-container: #1a191b;
+  --color-on-tertiary-fixed: #003d42;
+  --color-tertiary: #8af2ff;
+  --color-on-primary: #006413;
+  --color-error-container: #b92902;
+
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  --radius-default: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 9999px;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-@theme inline {
-  --color-main-dark: #171717;
-  --color-main-light: #f7f7f7;
-  --color-text-main-dark: #eee;
-  --color-text-main-light: #111;
-  --color-text-secundary-dark: #bbb;
-  --color-text-secundary-light: #555;
-  --color-border-dark: #333;
-  --color-border-light: #ddd;
-  --color-main-opacity-dark: #171717aa;
-  --color-main-opacity-light: #f7f7f7aa;
-  --color-hover-bg-dark: #252525;
-  --color-hover-bg-light: #d9d9d9;
-
-  --shadow-dark: 0 2px 2px #fff1;
-  --shadow-light: 0 2px 2px #0001;
-
-  --default-font-family: 'Funnel Display', sans-serif;
-
-  --container-maxw: 850px;
-
-  --spacing-main-container: 20px;
+* {
+  scroll-behavior: smooth;
 }
 
-.project {
-  animation: slice-up 0.3s ease-out both;
+body {
+  background-color: #0e0e0f;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+.tonal-shift {
+  background-color: #131314;
+}
+.text-glow {
+  text-shadow: 0 0 20px rgba(156, 255, 147, 0.3);
 }
 
-.copy {
-  animation: slice-down 3s ease-out both;
+.project-container::-webkit-scrollbar {
+  width: 2px; /* Tamaño del scroll en vertical */
+  height: 8px; /* Tamaño del scroll en horizontal */
 }
 
-.animated-background {
-  background-size: 200% 200%;
-  animation: bg-move 1s linear infinite alternate;
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.project-container::-webkit-scrollbar-thumb {
+  background: #9cff93;
+  border-radius: 0px;
 }
 
-.animated-project-background {
-  background-size: 200% 200%;
-  animation: bg-move 2s linear infinite alternate;
-  animation-play-state: paused;
-
-  &:hover {
-    animation-play-state: running;
-  }
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.project-container::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes bg-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 90% 50%;
-  }
+/* Cambiamos el fondo cuando esté en active */
+.project-container::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+.project-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
 }
 
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slice-up {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes slice-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  10% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-
-  90% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-}
+/* Cambiamos el fondo cuando esté en active o hover */
+/* .project-container::-webkit-scrollbar-track:hover,
+.project-container::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+} */

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { LinkIcon } from './Icons';
+import { useEffect, useState } from 'react';
 import { SeeMoreProject } from './SeeMoreProject';
 import { AnimatePresence } from 'motion/react';
 
@@ -12,72 +11,58 @@ export function Project({
   shortTitle,
   demoLink,
   githubLink,
+  id,
   img,
   alt,
-  lang,
+  gallery,
 }) {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [open]);
+
   return (
     <>
-      <article className='animated-project-background relative pb-12 bg-linear-200 from-[#fff] via-[#ccc] to-[#fff] dark:from-[#111] dark:via-[#333] dark:to-[#111] rounded-md shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-4 hover:scale-105 transition-transform duration-150 ease-in'>
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center gap-2'>
-            <img
-              className='bg-linear-to-br from-50% from-white to-black dark:from-black dark:to-white flex items-center justify-center rounded-md size-7 p-1'
-              src={icon}
-              alt='Project logo'
-            />
-            <a
-              target='_blank'
-              title='Visit Website'
-              href={demoLink}
-              className='text-text-main-light dark:text-text-main-dark flex items-center gap-1 group border-b-3 border-dotted border-b-transparent hover:border-b-text-main-light dark:hover:border-b-text-main-dark transition-colors duration-150'
-            >
-              {shortTitle}
-              <LinkIcon className='size-4 text-text-main-light dark:text-text-main-dark stroke-1 group-hover:stroke-2 group-hover:translate-x-0.5 transition-all duration-150' />
-            </a>
-          </div>
-          <a
-            target='_blank'
-            href={githubLink}
-            title='Code in GitHub'
-            className='hover:scale-110 drop-shadow-md drop-shadow-transparent hover:drop-shadow-black/50 dark:hover:drop-shadow-white/50 transition-all duration-150'
-          >
-            <img
-              className='size-6 invert-100 dark:invert-0'
-              src='/personal-portfolio-web/svg/GitHub.svg'
-              alt='GitHub'
-            />
-          </a>
+      <div
+        onClick={() => setOpen(true)}
+        className='group relative bg-background p-12 aspect-[4/5] md:aspect-square flex flex-col justify-between hover:bg-surface-container-high transition-all duration-500'
+      >
+        <div className='flex justify-between items-start'>
+          <span className='font-headline text-4xl font-bold text-outline-variant group-hover:text-primary transition-colors'>
+            {id.toString().padStart(2, '0')}
+          </span>
+          <span className='font-label text-xs tracking-widest uppercase py-1 px-3 border border-outline-variant'>
+            {shortTitle}
+          </span>
         </div>
-        <p className='text-text-secundary-light dark:text-text-secundary-dark mt-1'>
-          {lang ? shortDescription[0] : shortDescription[1]}
-        </p>
-        <ul className='flex flex-wrap items-center gap-3 mt-3 relative'>
-          {technologies.slice(0, 3).map((tech) => (
-            <li
-              key={tech}
-              className='flex select-none items-center gap-2 rounded-md bg-white/10 dark:bg-black/10 shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-2 py-1'
-            >
-              <img
-                className='size-4'
-                src={`/personal-portfolio-web/svg/${tech}.svg`}
-                alt=''
-              />
-              <span className='text-text-main-light text-nowrap dark:text-text-main-dark'>
-                {tech}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <button
-          onClick={() => setOpen(true)}
-          className='animated-background bg-linear-270 from-[#fff] via-[#ddd] to-[#fff] dark:from-[#000] dark:via-[#333] dark:to-[#111] absolute bottom-2 right-4 flex items-center gap-2 text-text-main-light p-1 px-2 rounded-md dark:text-text-main-dark underline underline-offset-2 cursor-pointer font-normal hover:invert-100 transition-all duration-150'
-        >
-          {lang ? 'See more' : 'Ver más'}
-        </button>
-      </article>
+        <div className='relative w-full h-1/2 overflow-hidden mb-8'>
+          <img
+            alt={alt}
+            className='w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100'
+            data-alt={shortDescription}
+            src={img}
+          />
+        </div>
+        <div>
+          <h3 className='font-headline text-4xl font-bold uppercase tracking-tighter mb-4'>
+            {title}
+          </h3>
+          <p className='font-body text-on-surface-variant line-clamp-2 mb-8'>
+            {description}
+          </p>
+          <button className='flex items-center gap-2 text-primary font-headline font-bold uppercase tracking-widest text-sm opacity-0 group-hover:opacity-100 transition-opacity'>
+            Inspect Case Study{' '}
+            <span className='material-symbols-outlined text-sm'>
+              open_in_new
+            </span>
+          </button>
+        </div>
+      </div>
 
       <AnimatePresence>
         {open && (
@@ -88,9 +73,9 @@ export function Project({
             demoLink={demoLink}
             githubLink={githubLink}
             img={img}
-            lang={lang}
             icon={icon}
             alt={alt}
+            gallery={gallery}
             onClose={() => setOpen(false)}
           />
         )}

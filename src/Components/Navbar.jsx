@@ -1,68 +1,46 @@
-import { CopyEmail } from './CopyEmail';
-import { CVIcon, Language, LinkedinIcon } from './Icons';
-import { SwitchTheme } from './SwitchTheme';
-
-export function Navbar({ setLang, lang }) {
+export function Navbar() {
   return (
-    <header className='sticky top-0 bg-main-opacity-light dark:bg-main-opacity-dark backdrop-blur-xs px-main-container z-10'>
-      <div className='flex flex-col sm:flex-row justify-between items-center py-2 max-w-maxw mx-auto '>
-        <a href='/' className='text-text-main-light dark:text-text-main-dark'>
-          josevigo.dev
+    <nav className='fixed top-0 w-full z-50 bg-[#131314]/70 backdrop-blur-xl transition-all duration-300'>
+      <div className='flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto'>
+        <div className="text-2xl font-black tracking-tighter text-[#9cff93] font-['Space_Grotesk'] uppercase">
+          JOSEVIGO.DEV
+        </div>
+        <div className='hidden md:flex items-center gap-12'>
+          <a
+            className="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#9cff93] border-b-2 border-[#9cff93] pb-1 transition-all"
+            href='#experience'
+          >
+            Experience
+          </a>
+          <a
+            className="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#adaaab] hover:text-[#9cff93] transition-all"
+            href='#projects'
+          >
+            Projects
+          </a>
+          <a
+            className="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#adaaab] hover:text-[#9cff93] transition-all"
+            href='#about'
+          >
+            About
+          </a>
+          <a
+            className="font-['Space_Grotesk'] font-bold tracking-tighter uppercase text-[#adaaab] hover:text-[#9cff93] transition-all"
+            href='#contact'
+          >
+            Contact
+          </a>
+        </div>
+        <a
+          href='/personal-portfolio-web/assets/Jose Vigo CV English.pdf'
+          className='relative bg-primary text-on-primary px-8 py-3 font-["Space_Grotesk"] font-bold uppercase tracking-widest hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(156,255,147,0.2)] transition-all active:scale-95 group'
+          download='Jose Vigo CV English.pdf'
+        >
+          Resume
+          <div className='absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-white opacity-0 group-hover:opacity-100 transition-opacity'></div>
+          <div className='absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-white opacity-0 group-hover:opacity-100 transition-opacity'></div>
         </a>
-        <nav className='flex items-center gap-2'>
-          <ul className='flex items-center gap-2'>
-            <li>
-              <a
-                className='block w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150'
-                href='https://linkedin.com/in/josevigodev'
-                title={lang ? 'LinkedIn profile' : 'Perfil de LinkedIn'}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <LinkedinIcon className='invert-100 dark:invert-0' />
-              </a>
-            </li>
-            <li>
-              <a
-                className='block w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150'
-                href='https://github.com/josevigodev'
-                title={lang ? 'GitHub account' : 'Cuenta de GitHub'}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <img
-                  className='size-6 invert-100 dark:invert-0'
-                  src='/personal-portfolio-web/svg/GitHub.svg'
-                  alt='GitHub'
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                className='block w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150'
-                download
-                href='/personal-portfolio-web/Jose Vigo CV English.pdf'
-                title={lang ? 'Download CV' : 'Descargar CV'}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <CVIcon className='invert-100 dark:invert-0' />
-              </a>
-            </li>
-          </ul>
-          <div className='flex items-center gap-2'>
-            <CopyEmail lang={lang} />
-            <button
-              title={lang ? 'Change language' : 'Cambiar idioma'}
-              className='cursor-pointer w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150'
-              onClick={setLang}
-            >
-              <Language className='invert-100 dark:invert-0' />
-            </button>
-            <SwitchTheme lang={lang} />
-          </div>
-        </nav>
       </div>
-    </header>
+    </nav>
   );
 }

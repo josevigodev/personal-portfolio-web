@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'motion/react';
-import { CloseIcon, LinkIcon } from './Icons';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { CarouselIndicator } from './CarouselIndicator';
 
 export function SeeMoreProject({
   title,
@@ -7,99 +9,179 @@ export function SeeMoreProject({
   technologies,
   demoLink,
   githubLink,
-  img,
-  lang,
   alt,
+  gallery,
   onClose,
-  icon,
 }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const timerRef = useRef(null);
+
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setProgress(0);
+    timerRef.current = setInterval(() => {
+      setProgress((prev) => {
+        const newProgress = prev + 100 / 40;
+        if (newProgress >= 100) {
+          setCurrentIndex(
+            currentIndex === gallery.length - 1 ? 0 : currentIndex + 1,
+          );
+          return 0;
+        }
+        return newProgress;
+      });
+    }, 100);
+  }, [gallery.length, currentIndex]);
+
+  useEffect(() => {
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [startTimer]);
 
   const handleClose = (e) => {
+    console.log(e.target.classList);
     if (!e.target.classList.contains('fun')) return;
-    onClose()
+    onClose();
+  };
+
+  // Slide handlers
+  const handlePrevSlide = () => {
+    setCurrentIndex(currentIndex === 0 ? gallery.length - 1 : currentIndex - 1);
+    startTimer();
+  };
+
+  const handleNextSlide = () => {
+    setCurrentIndex(currentIndex === gallery.length - 1 ? 0 : currentIndex + 1);
+    startTimer();
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      onClick={(e) => handleClose(e)}
-      className={`fun flex flex-col w-full min-h-dvh fixed top-0 left-0 right-0 z-20 backdrop-blur-md`}
-    >
-      <div className='fun flex-1'></div>
-      <motion.article
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.95, opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className={`max-w-maxw mx-auto bg-white/80 dark:bg-black/50 px-main-container py-4 rounded-2xl`}
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={(e) => handleClose(e)}
+        className='fun fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-12 lg:p-24 bg-surface-dim/40 backdrop-blur-2xl'
       >
-        <div className='flex items-center justify-between'>
-          <img
-            className='bg-linear-to-br from-50% from-white to-black dark:from-black dark:to-white flex items-center justify-center rounded-md size-9 p-1'
-            src={icon}
-            alt='Project logo'
-          />
-          <button onClick={handleClose}>
-            <CloseIcon className='fun cursor-pointer invert-100 dark:invert-0 hover:-rotate-90 transition-transform duration-300' />
-          </button>
-        </div>
-        <h2 className='mt-4 text-text-main-light dark:text-text-main-dark font-semibold text-2xl w-fit'>
-          {title}
-        </h2>
-        <p className='mt-4 text-text-secundary-light dark:text-text-secundary-dark'>
-          {lang ? description[0] : description[1]}
-        </p>
-        <div className='mt-4 flex items-center gap-4'>
-          <a
-            target='_blank'
-            href={demoLink}
-            className='bg-main-dark dark:bg-main-light p-1 px-2 text-text-main-dark dark:text-text-main-light flex items-center gap-1 w-fit rounded-md hover:scale-105 transition-transform duration-150'
-          >
-            {lang ? 'Visit Website' : 'Visitar sitio'}
-            <LinkIcon className='size-4 text-text-main-dark dark:text-text-main-light' />
-          </a>
-          <a
-            target='_blank'
-            href={githubLink}
-            className='bg-main-dark dark:bg-main-light p-1 px-2 text-text-main-dark dark:text-text-main-light flex items-center gap-1 w-fit rounded-md hover:scale-105 transition-transform duration-150'
-          >
-            {lang ? 'GitHub Code' : 'Código en GitHub'}
-            <img
-              className='size-6 dark:invert-100 invert-0'
-              src='/personal-portfolio-web/svg/GitHub.svg'
-              alt='GitHub'
-            />
-          </a>
-        </div>
-        <div className='mt-4 overflow-hidden rounded-md mx-auto max-w-[750px]'>
-          <img
-            src={img}
-            alt={alt}
-            className='aspect-video w-full object-cover'
-          />
-        </div>
-        <footer className='mt-4'>
-          <ul className='flex items-center flex-wrap gap-x-3 gap-y-2'>
-            {technologies.map((tech) => (
-              <li
-                key={tech}
-                className='flex items-center gap-2 rounded-md shadow-light dark:shadow-dark border-1 border-border-light dark:border-border-dark p-2 py-1'
+        <button
+          onClick={(e) => handleClose(e)}
+          className='fun fixed top-8 right-8 z-[110] text-on-surface hover:text-primary transition-colors group cursor-pointer'
+        >
+          <span className='fun material-symbols-outlined text-4xl'>close</span>
+        </button>
+
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.95, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className='w-full max-w-7xl h-full max-h-[850px] bg-surface-container-low flex flex-col md:flex-row relative border border-outline-variant/10 shadow-2xl'
+        >
+          <div className='w-full md:w-[60%] h-[400px] md:h-full relative bg-primary/10 group'>
+            <div className='overflow-hidden relative h-full'>
+              <div
+                className='flex h-full transition-transform duration-500 ease-in-out'
+                style={{
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                }}
               >
-                <img
-                  className='size-4'
-                  src={`/personal-portfolio-web/svg/${tech}.svg`}
-                  alt=''
-                />
-                <span className='text-text-main-light dark:text-text-main-dark'>
-                  {tech}
+                {gallery.map((src, index) => (
+                  <img
+                    key={index}
+                    alt={`${alt} - screenshot ${index + 1}`}
+                    className='w-full h-full object-contain opacity-90 grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 flex-shrink-0'
+                    data-alt={description}
+                    src={src}
+                  />
+                ))}
+              </div>
+
+              <CarouselIndicator
+                items={gallery}
+                currentIndex={currentIndex}
+                progress={progress}
+              />
+
+              <div className='absolute top-8 left-8 px-4 py-1 bg-primary text-on-primary font-headline font-bold text-xs tracking-widest uppercase'>
+                DEPLOYED_STABLE
+              </div>
+            </div>
+
+            <div className='absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-6'>
+              <button
+                onClick={handlePrevSlide}
+                className='bg-surface-dim/80 p-4 hover:bg-primary hover:text-on-primary transition-all active:scale-90'
+              >
+                <span className='material-symbols-outlined'>
+                  arrow_back_ios_new
                 </span>
-              </li>
-            ))}
-          </ul>
-        </footer>
-      </motion.article>
-    </motion.div>
+              </button>
+              <button
+                onClick={handleNextSlide}
+                className='bg-surface-dim/80 p-4 hover:bg-primary hover:text-on-primary transition-all active:scale-90'
+              >
+                <span className='material-symbols-outlined'>
+                  arrow_forward_ios
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className='project-container w-full md:w-[40%] overflow-y-auto p-12 lg:p-16 flex flex-col justify-between bg-surface-container-low border-l border-outline-variant/10'>
+            <div>
+              <div className='mb-12'>
+                <h1 className='font-headline text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-8 text-on-surface'>
+                  {title}
+                </h1>
+                <div className='w-20 h-2 bg-primary mb-8'></div>
+              </div>
+
+              <div className='space-y-6 mb-12'>
+                <p className='text-on-surface-variant leading-relaxed text-lg'>
+                  {description}
+                </p>
+              </div>
+              <div className='mb-12'>
+                <h3 className='font-headline text-[10px] tracking-[0.3em] text-outline mb-6 uppercase'>
+                  System Stack
+                </h3>
+                <div className='flex flex-wrap gap-x-8 gap-y-4'>
+                  {technologies.map((tech, index) => (
+                    <div key={index} className='flex items-center gap-2 group'>
+                      <span className='w-1.5 h-1.5 bg-primary group-hover:scale-150 transition-transform'></span>
+                      <span className='font-headline cursor-default text-sm tracking-widest text-on-surface uppercase'>
+                        {tech}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto'>
+              <a
+                href={demoLink}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='bg-primary text-on-primary font-headline font-bold py-5 tracking-[0.2em] hover:brightness-110 active:scale-95 transition-all text-xs flex items-center justify-center'
+              >
+                LIVE DEMO
+              </a>
+              <a
+                href={githubLink}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='border border-outline-variant hover:bg-surface-bright text-on-surface font-headline font-bold py-5 tracking-[0.2em] active:scale-95 transition-all text-xs flex items-center justify-center'
+              >
+                SOURCE CODE
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </>
   );
 }

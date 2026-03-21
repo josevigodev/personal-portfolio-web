@@ -72,6 +72,11 @@ body {
   color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
+
+.copy {
+  animation: slice-down 3s ease-out both;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,
@@ -118,3 +123,58 @@ body {
 .project-container::-webkit-scrollbar-track:active {
   background: #d4d4d4;
 } */
+
+.nav-link {
+  position: relative;
+  color: #adaaab;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #9cff93;
+  transition: width 0.3s ease;
+  border-radius: 999px;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: #9cff93;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+@keyframes slice-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}

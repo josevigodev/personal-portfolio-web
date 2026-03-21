@@ -19,16 +19,14 @@ export function CopyEmail({ lang }) {
         className='block w-fit p-1.5 rounded-md hover:bg-hover-bg-light dark:hover:bg-hover-bg-dark transition-colors duration-150 cursor-pointer'
         onClick={handleCopy}
       >
-        <MailIcon className='invert-100 dark:invert-0' />
+        <MailIcon className='hover:text-primary' />
       </button>
       {open && (
-        <article className='copy absolute top-10 right-0 left-0 w-fit mx-auto bg-main-light dark:bg-main-dark flex items-center gap-2 p-3 rounded-md border-3 border-dotted border-border-light dark:border-border-dark shadow-light darl:shadow-dark'>
-          <DoneIcon className='invert-100 dark:invert-0' />
+        <article className='bg-surface-container-low copy absolute top-10 right-0 left-0 w-fit mx-auto flex items-center gap-2 p-3 rounded-md border-3 border-dotted border-primary shadow-lg shadow-primary/20'>
+          <DoneIcon className='text-primary' />
           <div className='flex flex-col gap-1'>
-            <p className='text-xl text-text-main-light dark:text-text-main-dark'>
-              {lang ? 'Copied to clipboard' : 'Copiado al portapapeles'}
-            </p>
-            <small className='text-md text-text-secundary-light dark:text-text-secundary-dark'>
+            <p className='text-xl text-primary'>Copied to clipboard</p>
+            <small className='text-md text-primary/80'>
               josevigodev@gmail.com
             </small>
           </div>

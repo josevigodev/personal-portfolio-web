@@ -54,7 +54,7 @@ export default function App() {
                 Archive_001
               </span>
               <h2 className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase'>
-                Professional <br />
+                Work <br />
                 History
               </h2>
             </div>
@@ -203,93 +203,40 @@ export default function App() {
             </div>
           </div>
         </section>
-
-        <section
-          className='py-32 px-12 bg-surface-container-low border-t border-outline-variant/15'
-          id='contact'
-        >
-          <div className='max-w-[1400px] mx-auto text-center'>
-            <span className='font-label text-xs tracking-[0.3em] uppercase text-primary mb-8 block'>
-              Transmission.Request
-            </span>
-            <h2 className='font-headline text-6xl md:text-[9rem] font-black tracking-tighter uppercase mb-16 leading-[0.85]'>
-              Build Something <br />
-              <span className='text-primary'>Epic</span>
-            </h2>
-            <div className='max-w-3xl mx-auto'>
-              <form className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 text-left'>
-                <div className='space-y-4'>
-                  <label className='font-label text-xs uppercase tracking-widest text-on-surface-variant'>
-                    Your Identity
-                  </label>
-                  <input
-                    className='w-full bg-transparent border-b border-outline-variant py-4 px-0 text-2xl font-headline font-bold uppercase focus:outline-none focus:border-primary transition-colors placeholder:text-outline/30'
-                    placeholder='NAME / ORGANIZATION'
-                    type='text'
-                  />
-                </div>
-                <div className='space-y-4'>
-                  <label className='font-label text-xs uppercase tracking-widest text-on-surface-variant'>
-                    The Coordinates
-                  </label>
-                  <input
-                    className='w-full bg-transparent border-b border-outline-variant py-4 px-0 text-2xl font-headline font-bold uppercase focus:outline-none focus:border-primary transition-colors placeholder:text-outline/30'
-                    placeholder='EMAIL ADDRESS'
-                    type='email'
-                  />
-                </div>
-                <div className='md:col-span-2 space-y-4'>
-                  <label className='font-label text-xs uppercase tracking-widest text-on-surface-variant'>
-                    The Mission Brief
-                  </label>
-                  <textarea
-                    className='w-full bg-transparent border-b border-outline-variant py-4 px-0 text-2xl font-headline font-bold uppercase focus:outline-none focus:border-primary transition-colors placeholder:text-outline/30 resize-none'
-                    placeholder='DESCRIBE YOUR VISION'
-                    rows='4'
-                  ></textarea>
-                </div>
-                <div className='md:col-span-2 flex justify-center mt-12'>
-                  <button
-                    className='group relative px-16 py-6 bg-primary text-on-primary font-headline font-black uppercase tracking-[0.2em] text-xl hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(156,255,147,0.2)] transition-all'
-                    type='submit'
-                  >
-                    Initiate Protocol
-                    <div className='absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-white opacity-0 group-hover:opacity-100 transition-opacity'></div>
-                    <div className='absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-white opacity-0 group-hover:opacity-100 transition-opacity'></div>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
       </main>
       <footer className='w-full border-t border-[#484849]/15 bg-[#0e0e0f]'>
         <div className='flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 max-w-[1920px] mx-auto gap-8'>
           <div className="text-lg font-bold text-[#9cff93] font-['Space_Grotesk'] uppercase tracking-widest">
-            ARCHITECT.DEV
+            JOSEVIGO.DEV
           </div>
           <div className="font-['Inter'] text-sm tracking-widest uppercase text-[#adaaab]">
-            © 2024 THE DIGITAL ARCHITECT. ALL RIGHTS RESERVED.
+            © 2026 THE DIGITAL ARCHITECT. ALL RIGHTS RESERVED.
           </div>
           <div className='flex gap-8'>
             <a
               className="font-['Inter'] text-sm tracking-widest uppercase text-[#adaaab] hover:text-[#9cff93] transition-colors opacity-80 hover:opacity-100"
-              href='#'
+              href='https://github.com/josevigodev'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               Github
             </a>
             <a
               className="font-['Inter'] text-sm tracking-widest uppercase text-[#adaaab] hover:text-[#9cff93] transition-colors opacity-80 hover:opacity-100"
-              href='#'
+              href='https://linkedin.com/in/josevigodev'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               LinkedIn
             </a>
-            <a
+            {/* <a
               className="font-['Inter'] text-sm tracking-widest uppercase text-[#adaaab] hover:text-[#9cff93] transition-colors opacity-80 hover:opacity-100"
-              href='#'
+              href='https://read.cv/josevigodev'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               Read.cv
-            </a>
+            </a> */}
           </div>
         </div>
       </footer>

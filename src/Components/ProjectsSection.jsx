@@ -2,7 +2,7 @@ import { Project } from './Project';
 
 export function ProjectsSection() {
   return (
-    <section className='py-32 px-12 bg-surface-container-low' id='projects'>
+    <section className='py-32 px-3 bg-surface-container-low' id='projects'>
       <div className='max-w-[1920px] mx-auto'>
         <div className='flex flex-col md:flex-row justify-between items-end mb-24 gap-8'>
           <div>

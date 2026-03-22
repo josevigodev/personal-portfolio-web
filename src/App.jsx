@@ -1,4 +1,5 @@
 import { Navbar } from './Components/Navbar';
+import { motion } from 'motion/react';
 import { ProjectsSection } from './Components/ProjectsSection';
 
 export default function App() {
@@ -47,36 +48,79 @@ export default function App() {
             </span>
           </div>
         </section>
+
         <section className='py-32 px-12 bg-background relative' id='experience'>
           <div className='max-w-[1920px] mx-auto'>
             <div className='mb-24'>
               <span className='font-label text-xs tracking-[0.3em] uppercase text-primary mb-4 block'>
                 Archive_001
               </span>
-              <h2 className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase'>
+              <motion.h2
+                initial={{ opacity: 0, x: -70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.3 }}
+                className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase'
+              >
                 Work <br />
                 History
-              </h2>
+              </motion.h2>
             </div>
             <div className='border-l border-outline-variant/30 pl-8 md:pl-20 relative'>
               <div className='relative mb-20'>
                 <div className='absolute -left-[37px] md:-left-[85px] top-2 w-4 h-4 bg-primary'></div>
                 <div className='grid grid-cols-1 md:grid-cols-12 gap-12'>
                   <div className='md:col-span-4'>
-                    <span className='font-headline text-primary font-bold uppercase tracking-widest text-sm mb-2 block'>
+                    <motion.span
+                      initial={{ opacity: 0, x: -40 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeOut' }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      className='font-headline text-primary font-bold uppercase tracking-widest text-sm mb-2 block'
+                    >
                       Nov 2025 – Feb 2026
-                    </span>
-                    <h3 className='font-headline text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4'>
+                    </motion.span>
+                    <motion.h3
+                      initial={{ opacity: 0, y: -40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        ease: 'easeOut',
+                        delay: 0.3,
+                      }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      className='font-headline text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4'
+                    >
                       Intern Frontend <br />
                       Web Developer
-                    </h3>
-                    <div className='font-label text-sm uppercase tracking-widest text-on-surface-variant'>
+                    </motion.h3>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{
+                        duration: 0.3,
+                        ease: 'easeOut',
+                        delay: 0.7,
+                      }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      className='font-label text-sm uppercase tracking-widest text-on-surface-variant'
+                    >
                       PitchMatter • Dubai, UAE
-                    </div>
+                    </motion.div>
                   </div>
                   <div className='md:col-span-8'>
                     <ul className='space-y-8'>
-                      <li className='flex gap-6 group'>
+                      <motion.li
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: 'easeOut',
+                          delay: 0.7,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className='flex gap-6 group'
+                      >
                         <span className='font-headline font-bold text-primary text-xl'>
                           01
                         </span>
@@ -89,8 +133,18 @@ export default function App() {
                           improving visual consistency, responsiveness, and
                           overall user experience.
                         </p>
-                      </li>
-                      <li className='flex gap-6 group'>
+                      </motion.li>
+                      <motion.li
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: 'easeOut',
+                          delay: 0.8,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className='flex gap-6 group'
+                      >
                         <span className='font-headline font-bold text-primary text-xl'>
                           02
                         </span>
@@ -101,8 +155,18 @@ export default function App() {
                           for state management to reduce duplication and
                           accelerate future feature development.
                         </p>
-                      </li>
-                      <li className='flex gap-6 group'>
+                      </motion.li>
+                      <motion.li
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: 'easeOut',
+                          delay: 0.9,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className='flex gap-6 group'
+                      >
                         <span className='font-headline font-bold text-primary text-xl'>
                           03
                         </span>
@@ -111,8 +175,18 @@ export default function App() {
                           attributes, and usability best practices, contributing
                           to a more inclusive and accessible interface.
                         </p>
-                      </li>
-                      <li className='flex gap-6 group'>
+                      </motion.li>
+                      <motion.li
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: 'easeOut',
+                          delay: 1,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className='flex gap-6 group'
+                      >
                         <span className='font-headline font-bold text-primary text-xl'>
                           04
                         </span>
@@ -123,8 +197,18 @@ export default function App() {
                           validation and safer data handling, ensuring smooth
                           and predictable UI behavior.
                         </p>
-                      </li>
-                      <li className='flex gap-6 group'>
+                      </motion.li>
+                      <motion.li
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          ease: 'easeOut',
+                          delay: 1.1,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className='flex gap-6 group'
+                      >
                         <span className='font-headline font-bold text-primary text-xl'>
                           05
                         </span>
@@ -135,7 +219,7 @@ export default function App() {
                           requests and code reviews, actively communicating
                           ideas, and contributing to shared frontend decisions.
                         </p>
-                      </li>
+                      </motion.li>
                     </ul>
                   </div>
                 </div>
@@ -153,41 +237,69 @@ export default function App() {
               <span className='font-label text-xs tracking-[0.3em] uppercase text-primary mb-6 block'>
                 Identity.Manifesto
               </span>
-              <h2 className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase mb-12'>
+              <motion.h2
+                initial={{ opacity: 0, x: -70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.3 }}
+                className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase mb-12'
+              >
                 The Digital <br />
                 Architect
-              </h2>
+              </motion.h2>
               <div className='space-y-8'>
-                <p className='font-body text-2xl text-on-surface leading-relaxed'>
+                <motion.p
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className='font-body text-2xl text-on-surface leading-relaxed'
+                >
                   I operate at the intersection of brutalist design and
                   high-order engineering. My philosophy is simple:{' '}
                   <span className='text-primary font-bold'>
                     Absolute Competence.
                   </span>
-                </p>
-                <p className='font-body text-lg text-on-surface-variant leading-relaxed max-w-2xl'>
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className='font-body text-lg text-on-surface-variant leading-relaxed max-w-2xl'
+                >
                   I create high-quality, user-focused frontend solutions with
                   precision and care. Every project I build is designed to
                   perform and impress.
-                </p>
+                </motion.p>
               </div>
               <div className='grid grid-cols-2 gap-12 mt-16 border-t border-outline-variant/30 pt-12'>
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                >
                   <h4 className='font-headline font-bold text-primary text-xl uppercase mb-2'>
                     Philosophy
                   </h4>
                   <p className='font-label text-sm text-on-surface-variant uppercase tracking-widest'>
                     Performance first. Aesthetics second. Compromise never.
                   </p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.5 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                >
                   <h4 className='font-headline font-bold text-primary text-xl uppercase mb-2'>
                     Technique
                   </h4>
                   <p className='font-label text-sm text-on-surface-variant uppercase tracking-widest'>
                     Full-stack dominance with a focus on immersive UI systems.
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
             <div className='md:col-span-5 relative'>

@@ -1,18 +1,25 @@
 import { Project } from './Project';
+import { motion } from 'motion/react';
 
 export function ProjectsSection() {
   return (
     <section className='py-32 px-3 bg-surface-container-low' id='projects'>
       <div className='max-w-[1920px] mx-auto'>
-        <div className='flex flex-col md:flex-row justify-between items-end mb-24 gap-8'>
+        <div className='flex flex-col md:flex-row justify-between md:items-end mb-24 gap-8'>
           <div>
             <span className='font-label text-xs tracking-[0.3em] uppercase text-primary mb-4 block'>
               Archive_002
             </span>
-            <h2 className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase'>
+            <motion.h2
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.3 }}
+              className='font-headline text-6xl md:text-8xl font-black tracking-tighter uppercase'
+            >
               Selected <br />
               Projects
-            </h2>
+            </motion.h2>
           </div>
           <p className='max-w-md font-body text-on-surface-variant text-lg'>
             Showcasing frontend projects designed for clarity, impact, and

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SeeMoreProject } from './SeeMoreProject';
 import { AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 
 export function Project({
   icon,
@@ -28,7 +29,11 @@ export function Project({
 
   return (
     <>
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: 'easeOut', delay: id * 0.2 }}
+        viewport={{ once: true }}
         onClick={() => setOpen(true)}
         className='group relative bg-background p-12 aspect-[4/5] md:aspect-square flex flex-col justify-between hover:bg-surface-container-high transition-all duration-500'
       >
@@ -40,21 +45,47 @@ export function Project({
             {shortTitle}
           </span>
         </div>
-        <div className='relative w-full h-1/2 overflow-hidden mb-8'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.2, ease: 'easeOut', delay: 0.5 }}
+          viewport={{ once: true }}
+          className='relative w-full h-1/2 overflow-hidden mb-8'
+        >
           <img
             alt={alt}
             className='w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100'
             data-alt={shortDescription}
             src={img}
           />
-        </div>
+        </motion.div>
         <div>
-          <h3 className='font-headline text-4xl font-bold uppercase tracking-tighter mb-4'>
+          <motion.h3
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeOut',
+              delay: 0.7,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            className='font-headline text-4xl font-bold uppercase tracking-tighter mb-4'
+          >
             {title}
-          </h3>
-          <p className='font-body text-on-surface-variant line-clamp-2 mb-8'>
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeOut',
+              delay: 0.8,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            className='font-body text-on-surface-variant line-clamp-2 mb-8'
+          >
             {description}
-          </p>
+          </motion.p>
           <button className='flex items-center gap-2 text-primary font-headline font-bold uppercase tracking-widest text-sm opacity-0 group-hover:opacity-100 transition-opacity'>
             Inspect Case Study{' '}
             <span className='material-symbols-outlined text-sm'>
@@ -62,7 +93,7 @@ export function Project({
             </span>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       <AnimatePresence>
         {open && (

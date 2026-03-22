@@ -1,7 +1,7 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'motion/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { CarouselIndicator } from './CarouselIndicator';
+import { CodeIcon, LinkIcon } from './Icons';
 
 export function SeeMoreProject({
   title,
@@ -166,17 +166,19 @@ export function SeeMoreProject({
                 href={demoLink}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='bg-primary text-on-primary font-headline font-bold py-5 tracking-[0.2em] hover:brightness-110 active:scale-95 transition-all text-xs flex items-center justify-center'
+                className='bg-primary text-on-primary font-headline font-bold py-5 tracking-[0.2em] hover:brightness-110 active:scale-95 transition-all text-xs flex items-center gap-1 justify-center group'
               >
                 LIVE DEMO
+                <LinkIcon className='group-hover:translate-x-1 transition-transform duration-100' />
               </a>
               <a
                 href={githubLink}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='border border-outline-variant hover:bg-surface-bright text-on-surface font-headline font-bold py-5 tracking-[0.2em] active:scale-95 transition-all text-xs flex items-center justify-center'
+                className='border border-outline-variant hover:bg-surface-bright text-on-surface font-headline font-bold py-5 tracking-[0.2em] active:scale-95 transition-all text-xs flex items-center gap-1 justify-center group'
               >
-                SOURCE CODE
+                SOURCE
+                <CodeIcon className='group-hover:translate-x-1 transition-transform duration-100' />
               </a>
             </div>
           </div>

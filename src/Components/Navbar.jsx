@@ -43,7 +43,7 @@ export function Navbar() {
 
   return (
     <nav className='fixed top-0 w-full z-50 bg-[#131314]/70 backdrop-blur-xl transition-all duration-300'>
-      <div className='flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto'>
+      <div className='flex flex-col sm:flex-row justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto'>
         <div className="text-2xl font-black tracking-tighter text-[#9cff93] font-['Space_Grotesk'] uppercase">
           JOSEVIGO.DEV
         </div>

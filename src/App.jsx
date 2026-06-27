@@ -1,11 +1,62 @@
-import { Navbar } from './Components/Navbar';
-import { motion } from 'motion/react';
-import { ProjectsSection } from './Components/ProjectsSection';
+// import { Navbar } from './Components/Navbar'
+// import { motion } from 'motion/react'
+// import { ProjectsSection } from './Components/ProjectsSection'
 
 export default function App() {
   return (
     <>
-      <Navbar />
+      <div className='min-h-dvh absolute top-0 left-0 w-full backdrop-blur-md z-50 bg-black/30 flex flex-col items-center justify-center gap-5'>
+        <h2 className='text-7xl font-semibold text-yellow-400 text-center'>
+          This web is currently under maintenance
+        </h2>
+        <p className='text-4xl text-center'>
+          In the meantime you can see Jose Vigo's:
+        </p>
+        <ul className='flex items-center justify-center gap-5 flex-wrap'>
+          <li>
+            <a
+              href='https://x.com/josevigodev'
+              target='_blank'
+              className='text-blue-400 underline text-xl'
+            >
+              X
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.instagram.com/josevigodev/'
+              target='_blank'
+              className='text-blue-400 underline text-xl'
+            >
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.facebook.com/profile.php?id=61590809078640'
+              target='_blank'
+              className='text-blue-400 underline text-xl'
+            >
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.tiktok.com/@josevigodev'
+              target='_blank'
+              className='text-blue-400 underline text-xl'
+            >
+              TikTok
+            </a>
+          </li>
+        </ul>
+      </div>
+      <img
+        className='w-full h-dvh object-cover object-center'
+        data-alt='Dramatic black and white portrait of a professional developer'
+        src='/personal-portfolio-web/Screenshot_20260627_132043.png'
+      />
+      {/* <Navbar />
       <main>
         <section className='relative min-h-screen flex flex-col justify-center px-12 pt-32 overflow-hidden'>
           <div className='absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none'>
@@ -86,7 +137,7 @@ export default function App() {
                       transition={{
                         duration: 0.4,
                         ease: 'easeOut',
-                        delay: 0.3,
+                        delay: 0.3
                       }}
                       viewport={{ once: true, amount: 0.3 }}
                       className='font-headline text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4'
@@ -100,7 +151,7 @@ export default function App() {
                       transition={{
                         duration: 0.3,
                         ease: 'easeOut',
-                        delay: 0.7,
+                        delay: 0.7
                       }}
                       viewport={{ once: true, amount: 0.3 }}
                       className='font-label text-sm uppercase tracking-widest text-on-surface-variant'
@@ -116,7 +167,7 @@ export default function App() {
                         transition={{
                           duration: 0.3,
                           ease: 'easeOut',
-                          delay: 0.7,
+                          delay: 0.7
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                         className='flex gap-6 group'
@@ -140,7 +191,7 @@ export default function App() {
                         transition={{
                           duration: 0.3,
                           ease: 'easeOut',
-                          delay: 0.8,
+                          delay: 0.8
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                         className='flex gap-6 group'
@@ -162,7 +213,7 @@ export default function App() {
                         transition={{
                           duration: 0.3,
                           ease: 'easeOut',
-                          delay: 0.9,
+                          delay: 0.9
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                         className='flex gap-6 group'
@@ -182,7 +233,7 @@ export default function App() {
                         transition={{
                           duration: 0.3,
                           ease: 'easeOut',
-                          delay: 1,
+                          delay: 1
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                         className='flex gap-6 group'
@@ -204,7 +255,7 @@ export default function App() {
                         transition={{
                           duration: 0.3,
                           ease: 'easeOut',
-                          delay: 1.1,
+                          delay: 1.1
                         }}
                         viewport={{ once: true, amount: 0.3 }}
                         className='flex gap-6 group'
@@ -341,17 +392,9 @@ export default function App() {
             >
               LinkedIn
             </a>
-            {/* <a
-              className="font-['Inter'] text-sm tracking-widest uppercase text-[#adaaab] hover:text-[#9cff93] transition-colors opacity-80 hover:opacity-100"
-              href='https://read.cv/josevigodev'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Read.cv
-            </a> */}
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
-  );
+  )
 }
